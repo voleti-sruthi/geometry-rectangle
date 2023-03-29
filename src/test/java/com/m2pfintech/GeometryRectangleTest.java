@@ -38,4 +38,30 @@ public class GeometryRectangleTest {
 
     }
 
+    @Nested
+    class RectanglePerimeter{
+        @Test
+        void toReturnPerimeterAsSixteenWhenSidesAreTwoAndSix(){
+            double expectedPerimeter = 16;
+
+            double actualPerimeter = rectangleObject.rectanglePerimeter(2,6);
+
+            assertEquals(expectedPerimeter,actualPerimeter);
+        }
+
+        @Test
+        void toReturnPerimeterAsSixteenPointFourWhenSidesAreTwoPointTwoAndSix(){
+            double expectedPerimeter = 16.4;
+
+            double actualPerimeter = rectangleObject.rectanglePerimeter(2.2,6);
+
+            assertEquals(expectedPerimeter,actualPerimeter);
+        }
+
+        @Test
+        void toThrowInvalidInputExceptionIfSidesAreNegativeValues() {
+            assertThrows(IllegalArgumentException.class, () -> rectangleObject.rectanglePerimeter(-2, 4));
+        }
+    }
+
 }

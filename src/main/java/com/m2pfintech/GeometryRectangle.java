@@ -8,4 +8,11 @@ public class GeometryRectangle {
         }
         return firstSide*secondSide;
     }
+
+    public double rectanglePerimeter(double firstSide, double secondSide) {
+        if(firstSide <=0 || secondSide <= 0){
+            throw new IllegalArgumentException();
+        }
+        return 2*(firstSide+secondSide);
+    }
 }
